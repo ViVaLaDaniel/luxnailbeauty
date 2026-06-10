@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Stats from '../components/Stats.astro';
+import WhatYouGet from '../components/WhatYouGet.astro';
+import AvatarBlock from '../components/AvatarBlock.astro';
+import ContentPlan from '../components/ContentPlan.astro';
+import Automation from '../components/Automation.astro';
+import CTA from '../components/CTA.astro';
+---
+
+<Layout>
+  <!-- Main proposal page flow -->
+  <Hero />
+  <Stats />
+  <WhatYouGet />
+  <AvatarBlock />
+  <ContentPlan />
+  <Automation />
+  <CTA />
+</Layout>
+
+<script>
+  function setupScrollAnimations() {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.08
+    };
+
+    const observer = new IntersectionObserver((entries, self) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          // Once animated, stop observing this element
+          self.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    const animatedElements = document.querySelectorAll('.au');
+    animatedElements.forEach(el => {
+      observer.observe(el);
+    });
+  }
+
+  // Setup on mount
+  setupScrollAnimations();
+
+  // Astro page transitions support
+  document.addEventListener('astro:after-swap', setupScrollAnimations);
+</script>

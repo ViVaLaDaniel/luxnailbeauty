@@ -1,0 +1,102 @@
+---
+---
+<div class="stats-grid au">
+  <div class="stat-card">
+    <div class="stat-icon-bg">
+      <i class="ti ti-star-filled" aria-hidden="true"></i>
+    </div>
+    <div class="stat-num">800+</div>
+    <div class="stat-label">Отзывов клиентов</div>
+  </div>
+  
+  <div class="stat-card">
+    <div class="stat-icon-bg">
+      <i class="ti ti-heart-filled" aria-hidden="true"></i>
+    </div>
+    <div class="stat-num">5.0</div>
+    <div class="stat-label">Рейтинг Booksy</div>
+  </div>
+  
+  <div class="stat-card">
+    <div class="stat-icon-bg">
+      <i class="ti ti-app-window" aria-hidden="true"></i>
+    </div>
+    <div class="stat-num">2</div>
+    <div class="stat-label">Топ-аккаунта</div>
+  </div>
+  
+  <div class="stat-card">
+    <div class="stat-icon-bg">
+      <i class="ti ti-trending-up" aria-hidden="true"></i>
+    </div>
+    <div class="stat-num">15×</div>
+    <div class="stat-label">Рост Академии</div>
+  </div>
+</div>
+
+<style>
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .stat-card {
+    background: rgba(28, 13, 23, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--ln-border-color);
+    border-radius: 18px;
+    padding: 1.25rem 0.875rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .stat-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(232, 160, 176, 0.4);
+    box-shadow: 0 8px 30px rgba(201, 85, 111, 0.1);
+  }
+
+  .stat-card:active {
+    transform: scale(0.97);
+  }
+
+  .stat-icon-bg {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 40px;
+    color: rgba(201, 85, 111, 0.05);
+    transform: rotate(15deg);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .stat-num {
+    font-family: var(--ln-font-heading);
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--ln-rose-primary);
+    background: linear-gradient(135deg, var(--ln-rose-primary) 0%, #ffcbd7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .stat-label {
+    font-size: 10.5px;
+    font-weight: 500;
+    color: var(--ln-text-secondary);
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 2;
+  }
+</style>
